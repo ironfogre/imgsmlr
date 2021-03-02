@@ -169,7 +169,7 @@ signature_same(PG_FUNCTION_ARGS)
 
 	if (VARSIZE_ANY_EXHDR(b1) == VARSIZE_ANY_EXHDR(b2))
 	{
-		*result = (memcpy(b1, b2, VARSIZE_ANY_EXHDR(b1)) == 0);
+		*result = (memcmp(b1, b2, VARSIZE_ANY_EXHDR(b1)) == 0);
 	}
 	else
 	{
